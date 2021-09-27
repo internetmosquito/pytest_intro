@@ -69,7 +69,7 @@ instance/
 .scrapy
 
 # IDEA
-.idea
+.idea/
 
 # Sphinx documentation
 docs/_build/
