@@ -1,7 +1,6 @@
 from flask import Flask, jsonify, request
 from pydantic import ValidationError
 
-
 from pytest_intro.commands import CreateArticleCommand
 from pytest_intro.queries import GetArticleByIDQuery, ListArticlesQuery
 

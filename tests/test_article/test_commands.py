@@ -1,7 +1,7 @@
 import pytest
 
+from pytest_intro.commands import AlreadyExists, CreateArticleCommand
 from pytest_intro.models import Article
-from pytest_intro.commands import CreateArticleCommand, AlreadyExists
 
 
 def test_create_article():

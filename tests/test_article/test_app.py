@@ -1,9 +1,9 @@
 import json
 import pathlib
-import requests
 
 import pytest
-from jsonschema import validate, RefResolver
+import requests
+from jsonschema import RefResolver, validate
 
 from pytest_intro.app import app
 from pytest_intro.models import Article

@@ -1,5 +1,5 @@
 from pytest_intro.models import Article
-from pytest_intro.queries import ListArticlesQuery, GetArticleByIDQuery
+from pytest_intro.queries import GetArticleByIDQuery, ListArticlesQuery
 
 
 def test_list_articles():
