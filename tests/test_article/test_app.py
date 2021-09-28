@@ -22,12 +22,14 @@ def validate_payload(payload, schema_name):
     Validate payload with selected schema
     """
     schemas_dir = str(f"{pathlib.Path(__file__).parent.absolute()}/schemas")
-    schema = json.loads(pathlib.Path(f"{schemas_dir}/{schema_name}").read_text())
+    schema = json.loads(pathlib.Path(f"{schemas_dir}/{schema_name}")
+                        .read_text())
     validate(
         payload,
         schema,
         resolver=RefResolver(
-            "file://" + str(pathlib.Path(f"{schemas_dir}/{schema_name}").absolute()),
+            "file://" + str(pathlib.Path(f"{schemas_dir}/{schema_name}")
+                            .absolute()),
             schema,  # it's used to resolve file: inside schemas correctly
         ),
     )

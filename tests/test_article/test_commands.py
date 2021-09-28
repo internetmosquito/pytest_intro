@@ -6,12 +6,15 @@ from pytest_intro.models import Article
 
 def test_create_article():
     """
-    GIVEN CreateArticleCommand with a valid properties author, title and content
+    GIVEN CreateArticleCommand with a valid properties author,
+    title and content
     WHEN the execute method is called
     THEN a new Article must exist in the database with the same attributes
     """
     cmd = CreateArticleCommand(
-        author="john@doe.com", title="New Article", content="Super awesome article"
+        author="john@doe.com",
+        title="New Article",
+        content="Super awesome article"
     )
 
     article = cmd.execute()
@@ -38,7 +41,9 @@ def test_create_article_already_exists():
     ).save()
 
     cmd = CreateArticleCommand(
-        author="john@doe.com", title="New Article", content="Super awesome article"
+        author="john@doe.com",
+        title="New Article",
+        content="Super awesome article"
     )
 
     with pytest.raises(AlreadyExists):
