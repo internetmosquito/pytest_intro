@@ -9,19 +9,18 @@ def test_list_articles():
     THEN it should return 2 articles
     """
     Article(
-        author='jane@doe.com',
-        title='New Article',
-        content='Super extra awesome article'
+        author="jane@doe.com",
+        title="New Article",
+        content="Super extra awesome article",
     ).save()
     Article(
-        author='jane@doe.com',
-        title='Another Article',
-        content='Super awesome article'
+        author="jane@doe.com", title="Another Article", content="Super awesome article"
     ).save()
 
     query = ListArticlesQuery()
 
     assert len(query.execute()) == 2
+
 
 def test_get_article_by_id():
     """
@@ -30,13 +29,11 @@ def test_get_article_by_id():
     THEN it should return the article with the same id
     """
     article = Article(
-        author='jane@doe.com',
-        title='New Article',
-        content='Super extra awesome article'
+        author="jane@doe.com",
+        title="New Article",
+        content="Super extra awesome article",
     ).save()
 
-    query = GetArticleByIDQuery(
-        id=article.id
-    )
+    query = GetArticleByIDQuery(id=article.id)
 
     assert query.execute().id == article.id

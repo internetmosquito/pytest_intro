@@ -11,9 +11,7 @@ def test_create_article():
     THEN a new Article must exist in the database with the same attributes
     """
     cmd = CreateArticleCommand(
-        author='john@doe.com',
-        title='New Article',
-        content='Super awesome article'
+        author="john@doe.com", title="New Article", content="Super awesome article"
     )
 
     article = cmd.execute()
@@ -34,15 +32,13 @@ def test_create_article_already_exists():
     """
 
     Article(
-        author='jane@doe.com',
-        title='New Article',
-        content='Super extra awesome article'
+        author="jane@doe.com",
+        title="New Article",
+        content="Super extra awesome article",
     ).save()
 
     cmd = CreateArticleCommand(
-        author='john@doe.com',
-        title='New Article',
-        content='Super awesome article'
+        author="john@doe.com", title="New Article", content="Super awesome article"
     )
 
     with pytest.raises(AlreadyExists):

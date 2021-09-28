@@ -6,7 +6,6 @@ from pytest_intro.models import Article
 
 
 class ListArticlesQuery(BaseModel):
-
     def execute(self) -> List[Article]:
         articles = Article.list()
 
