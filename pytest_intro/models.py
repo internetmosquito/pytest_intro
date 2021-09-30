@@ -70,8 +70,7 @@ class Article(BaseModel):
         with sqlite3.connect(os.getenv("DATABASE_NAME", "database.db")) as con:
             cur = con.cursor()
             cur.execute(
-                "INSERT INTO articles "
-                "(id,author,title,content) VALUES(?, ?, ?, ?)",
+                "INSERT INTO articles " "(id,author,title,content) VALUES(?, ?, ?, ?)",
                 (self.id, self.author, self.title, self.content),
             )
             con.commit()
