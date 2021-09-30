@@ -21,10 +21,8 @@ jobs:
           poetry-version: ${{ matrix.poetry-version }}
       - name: Install dependencies
         run: poetry install
-      - name: Start Flask
-        run: FLASK_APP=pytest_intro/app.py python -m flask run
       - name: Run tests
-        run: poetry run pytest
+        run: poetry run pytest -m 'not e2e'
   code-quality:
     strategy:
       fail-fast: false
